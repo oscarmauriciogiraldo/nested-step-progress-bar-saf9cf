@@ -1,0 +1,136 @@
+.wrapper {
+  /* box-sizing: border-box;
+  width: max-content;
+  min-width: 240px;
+  list-style: none;
+  padding-left: 0; */
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  list-style: none;
+  box-sizing: border-box;
+  background: red;
+
+  ul {
+    list-style: none;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
+  }
+
+  span {
+    font-size: 1rem;
+  }
+
+  .menu {
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    &.collapsed > ul {
+      display: none;
+    }
+
+    > i:first-child {
+      position: absolute;
+      left: 0.5rem;
+      top: 0.5rem;
+    }
+
+    ~ li:not(.menu) > i {
+      margin-left: 0.5rem;
+      margin-right: 0.75rem;
+    }
+
+    .menu-item > i {
+      margin-right: 1rem;
+    }
+
+    .menu-heading {
+      display: inline-block;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0.5rem 1rem 0.5rem 2rem;
+
+      &:hover {
+        background-color: #eee;
+        cursor: pointer;
+      }
+    }
+
+    .toggle-button {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+  }
+}
+
+.pei {
+  display: inline-block;
+  position: relative;
+  font-style: normal;
+  font-family: Arial;
+}
+
+.pei-check-mark-circle::before {
+  content: '✓';
+  display: inline-block;
+  vertical-align: text-bottom;
+  text-align: center;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.5em;
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.pei-circle::before {
+  content: '';
+  display: inline-block;
+  box-sizing: border-box;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.5em;
+  background-color: #d9534f;
+}
+
+.pei-ring::before {
+  content: '';
+  display: inline-block;
+  box-sizing: border-box;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.5em;
+  border: 0.125em solid #d9534f;
+}
+
+.pei-chevron-up::before {
+  content: '';
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: text-bottom;
+  width: 0.625em;
+  height: 0.625em;
+  border-width: 0 0.2em 0.2em 0;
+  border-style: solid;
+  border-color: #999;
+  background: transparent;
+  transform: rotate(-135deg);
+}
+
+.pei-chevron-down::before {
+  content: '';
+  display: inline-block;
+  box-sizing: border-box;
+  width: 0.625em;
+  height: 0.625em;
+  border-width: 0 0.2em 0.2em 0;
+  border-style: solid;
+  border-color: #999;
+  background: transparent;
+  transform: rotate(45deg);
+}

@@ -1,0 +1,25 @@
+<ul *ngIf="steps.length" class="wrapper">
+	<li *ngFor="let step of steps" [ngClass]="{'menu': step.children}">
+
+		<ng-container [ngSwitch]="step.state">
+			<i *ngSwitchCase="'incomplete'" class="pei pei-ring"></i>
+			<i *ngSwitchCase="'complete'" class="pei pei-check-mark-circle"></i>
+			<i *ngSwitchCase="'current'" class="pei pei-circle"></i>
+		</ng-container>
+
+		<span [ngClass]="{'menu-heading': step.children}" (click)="toggleMenu($event)">{{step.text}}</span>
+    <i [ngClass]="{'toggle-button': true, 'pei': true, 'pei-chevron-up': step.children}"></i>
+		
+		<ul *ngIf="step.children">
+			<li *ngFor="let step2 of step.children" [ngClass]="{'menu-item': step.children}">
+				<ng-container [ngSwitch]="step2.state">
+					<i *ngSwitchCase="'incomplete'" class="pei pei-ring"></i>
+					<i *ngSwitchCase="'complete'" class="pei pei-check-mark-circle"></i>
+					<i *ngSwitchCase="'current'" class="pei pei-circle"></i>
+				</ng-container>
+				<span>{{step2.text}}</span>
+			</li>
+		</ul>
+
+	</li>
+</ul>

@@ -1,0 +1,22 @@
+<div class="toolbar">
+  <!-- <input
+    type="text"
+    required
+    [(ngModel)]="currentId"
+    (keyup.enter)="setCurrent()"
+  /> -->
+  <button (click)="setCurrent()">Set step</button>
+  <button (click)="previous()">Previous</button>
+  <button (click)="next()">Next1</button>
+</div>
+<div class="wrapper">
+  <!-- Componente barra de progreso -->
+  <app-step-progress-bar
+    [steps]="steps"
+    [current]="current"
+    style="margin-left:1rem; background: aqua"
+  ></app-step-progress-bar>
+  <div class="content-view">
+    <router-outlet></router-outlet>
+  </div>
+</div>
